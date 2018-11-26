@@ -7,7 +7,11 @@ Vue.config.productionTip = false
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import MyHttpServer from './pluglis/http.js';
+//把axios插件 变为Vue插件
+import './assets/css/base.css'
 Vue.use(ElementUI);
+Vue.use(MyHttpServer);
 
 
 /* eslint-disable no-new */

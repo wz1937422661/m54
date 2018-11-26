@@ -1,15 +1,26 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-
+import List from '@/components/login/login.vue'
+import Home from '@/components/home/home.vue'
+import User from '@/components/user/user.vue'
 Vue.use(Router)
-
+// 做登陆页面
 export default new Router({
-  routes: [
+  routes: [{
+      name: 'login',
+      path: '/login',
+      component: List
+    },
     {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    }
+      name: 'home',
+      path: '/home',
+      component: Home,
+      children: [
+        {name: 'user',
+        path: '/user',
+        component:User
+      }
+      ]
+    },
   ]
 })
